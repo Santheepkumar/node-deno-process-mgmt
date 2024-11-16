@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  app_cluster_1:
+    build:
+      context: .
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+    deploy:
+      replicas: 1
+
+  app_cluster_2:
+    build:
+      context: .
+    ports:
+      - "3002:3000"
+    environment:
+      - NODE_ENV=production
+    deploy:
+      replicas: 1
